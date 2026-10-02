@@ -1,10 +1,66 @@
-# Math formulas
-## Area
-- Circle: S = πR²
-- Rectangle: S = ab
-- Square: S = a²
+# geometric_lib
 
-## Perimeter
-- Circle: P = 2πR
-- Rectangle: P = 2a + 2b
-- Square: P = 4a
+## Общее описание
+
+`geometric_lib` — небольшая библиотека на Python для подсчёта площади и периметра
+простых геометрических фигур: круга, квадрата, прямоугольника и треугольника.
+Каждая фигура лежит в отдельном модуле, в каждом модуле есть две функции —
+`area` (площадь) и `perimeter` (периметр).
+
+Подключение:
+
+```python
+import circle
+import rectangle
+import square
+import triangle
+```
+
+Подробное описание функций находится в docstring и собирается в HTML-документацию.
+
+## HTML-документация
+
+Документация генерируется из docstring (Google-style) с помощью [pdoc](https://pdoc.dev).
+
+Установка:
+
+```bash
+pip install pdoc
+```
+
+Сборка (из корня репозитория):
+
+```bash
+pdoc --docformat google *.py -o docs/html
+```
+
+Результат — `docs/html/index.html`, его можно открыть в браузере.
+Папка `docs/html/` добавлена в `.gitignore`, в репозиторий она не попадает.
+
+Для просмотра с автообновлением при изменении кода можно запустить локальный сервер:
+
+```bash
+pdoc --docformat google *.py
+```
+
+## Doctest
+
+Примеры вызова в docstring (секция `Example`) одновременно являются тестами.
+Запуск всех тестов (из корня репозитория):
+
+```bash
+python3 -m doctest -v *.py
+```
+
+Без флага `-v` команда ничего не выводит, если все тесты прошли, и печатает
+только упавшие примеры.
+
+## История изменений
+
+- `8ba9aeb` — добавлены `circle.py` и `square.py`
+- `d078c8d` — добавлен `docs/README.md` с формулами
+- `a2ff75a` — у всех функций появились описание и пример вызова
+- переписан `docs/README.md`: общее описание, функции, история изменений
+- добавлен `triangle.py`
+- docstring переведены в Google-style, добавлена генерация HTML-документации через pdoc
+- добавлен `rectangle.py`
