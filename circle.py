@@ -1,7 +1,7 @@
 import math
 
 
-def area(r):
+def area(r: float) -> float:
     """
     Считает площадь круга по радиусу r.
     Формула: S = πR²
@@ -19,7 +19,7 @@ def area(r):
     return math.pi * r * r
 
 
-def perimeter(r):
+def perimeter(r: float) -> float:
     """
     Считает длину окружности (периметр круга) по радиусу r.
     Формула: P = 2πR
