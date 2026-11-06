@@ -23,6 +23,10 @@ class RectangleAreaTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             area(-3, 4)
 
+    def test_string_args(self):
+        with self.assertRaises(TypeError):
+            area("-3", "4")
+
 
 class RectanglePerimeterTestCase(unittest.TestCase):
     def test_zero_sides(self):
@@ -37,3 +41,7 @@ class RectanglePerimeterTestCase(unittest.TestCase):
     def test_negative_side(self):
         with self.assertRaises(ValueError):
             perimeter(-3, 4)
+
+    def test_string_args(self):
+        with self.assertRaises(TypeError):
+            perimeter("-3", "4")

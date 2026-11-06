@@ -17,6 +17,10 @@ class TriangleAreaTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             area(4, -3)
 
+    def test_string_args(self):
+        with self.assertRaises(TypeError):
+            area("4", "-3")
+
 
 class TrianglePerimeterTestCase(unittest.TestCase):
     def test_equilateral(self):
@@ -35,3 +39,7 @@ class TrianglePerimeterTestCase(unittest.TestCase):
     def test_triangle_inequality(self):
         with self.assertRaises(ValueError):
             perimeter(1, 2, 10)
+
+    def test_string_arguments(self):
+        with self.assertRaises(TypeError):
+            perimeter("1", "2", "10")

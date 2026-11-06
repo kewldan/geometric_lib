@@ -17,6 +17,10 @@ class SquareAreaTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             area(-5)
 
+    def test_string_side(self):
+        with self.assertRaises(TypeError):
+            area("5")
+
 
 class SquarePerimeterTestCase(unittest.TestCase):
     def test_zero_side(self):
